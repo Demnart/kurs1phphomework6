@@ -1,7 +1,20 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: genjo
- * Date: 12.05.17
- * Time: 12:37
- */
+
+$i  =1;
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма загрузки</title>
+</head>
+<body>
+
+<img src="<?php echo '/images/'.$i.'.jpeg'; ?>" alt="some text">
+<form action="/handler.php" method="post" enctype="multipart/form-data">
+    <input type="file" name="image" accept="image/jpeg">
+    <input type="submit" value="Отправить">
+</form>
+</body>
+</html>
+

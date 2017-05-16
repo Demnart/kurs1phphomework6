@@ -1,6 +1,8 @@
 <?php
-
-$i  =1;
+require __DIR__ . '/lib.php';
+fileUpload();
+$dirname = getDir();
+$images = getFiles($dirname);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,9 +11,10 @@ $i  =1;
     <title>Форма загрузки</title>
 </head>
 <body>
-
-<img src="<?php echo '/images/'.$i.'.jpeg'; ?>" alt="some text">
-<form action="/handler.php" method="post" enctype="multipart/form-data">
+<?php foreach ($images as $value ): ?>
+    <img src="/images/<?php echo $value;?>" alt="">
+<?php endforeach;?>
+<form action="/index.php" method="post" enctype="multipart/form-data">
     <input type="file" name="image" accept="image/jpeg">
     <input type="submit" value="Отправить">
 </form>
